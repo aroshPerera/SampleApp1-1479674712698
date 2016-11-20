@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: SampleApp1
+  host: SampleApplication1
+  disk_quota: 1024M
+  services:
+  - SampleApp1-cloudantNoSQLDB
+  - SampleApp1-iotf-service
+  - availability-monitoring-auto
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
